@@ -8,6 +8,9 @@
     <title>Document</title>
 </head>
 <body>
-    <?php echo '<h1>Hello world!</h1>' ?>
+    <?php
+    $name = 'Bohdan';
+    echo "<h1>Hello {$name}</h1>";
+    ?>
 </body>
 </html>
