@@ -9,5 +9,6 @@
 </head>
 <body>
     <a href="/LB_1/lb1.php">Лабораторна робота №1</a>
+    <a href="/LB_3/lb3.php">Лабораторна робота №3</a>
 </body>
 </html>
