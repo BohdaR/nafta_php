@@ -10,21 +10,23 @@
 <body>
 <a href="/">Home</a></br>
     <?php
+    function firtst_task($a): void
+    {
         $x = 1.62;
-        $a = 1.62;
         if ($a = $x) {
             $y = exp(abs($x + $a)) * sin($x);
             echo "<h1>Y1= {$y}</h1>";
         }
 
         $x = 1.41;
-        if ($a < $x and $x < $a*$a) {
-            $y = ($x - $a)**2 * cos($x)**2;
+        if ($a < $x and $x < $a * $a) {
+            $y = ($x - $a) ** 2 * cos($x) ** 2;
             echo "<h1>Y2= {$y}</h1>";
         }
+    }
 
-        $a = 4.55;
-        $b = 7.53;
+    function second_task($a, $b): void
+    {
         $start = 4.8;
         $end = 0.25;
         $x = $start;
@@ -32,11 +34,18 @@
         $step = ($end - $start) / $n;
         $i = 0;
         while ($i < $n) {
-            $r = exp(($x**2 - $a) / sin($x)) * ($b * (log(($x + 0.6)) / $x))**0.5;
+            $r = exp(($x ** 2 - $a) / sin($x)) * ($b * (log(($x + 0.6)) / $x)) ** 0.5;
             echo "<h5>R = {$r}</h5>";
             $x += $step;
             $i++;
         }
+    }
+    
+    echo "Result for task 1 </br>";
+    firtst_task(1.62);
+
+    echo "Result for task 2 </br>";
+    second_task(4.55, 7.53);
     ?>
 </body>
 </html>
