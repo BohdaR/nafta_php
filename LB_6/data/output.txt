@@ -1,0 +1,4 @@
+Sum of the matrix elements equals to 15
+Average of the matrix elements equals to 1.6666666666667
+Product of matrix elements equals to -4500
+Product of matrix elements equals to -0
