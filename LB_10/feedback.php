@@ -25,10 +25,10 @@ if(isset($_POST['email'])){
         //Server settings
         $mail->SMTPDebug = SMTP::DEBUG_SERVER;                      //Enable verbose debug output
         $mail->isSMTP();                                            //Send using SMTP
-        $mail->Host       = "smtp.gmail.com";                    //Set the SMTP server to send through
+        $mail->Host       = $_ENV["EMAIL_HOST"];                    //Set the SMTP server to send through
         $mail->SMTPAuth   = true;                                   //Enable SMTP authentication
-        $mail->Username   = "nofication1171@gmail.com";                //SMTP username
-        $mail->Password   = "nxtnrecryfwxjiyv";                //SMTP password
+        $mail->Username   = $_ENV["EMAIL_USERNAME"];                //SMTP username
+        $mail->Password   = $_ENV["EMAIL_PASSWORD"];                //SMTP password
         $mail->Port       = 587;                                    //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
 
         //Recipients
