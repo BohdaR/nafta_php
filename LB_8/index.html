@@ -1,0 +1,41 @@
+<html lang="en">
+<head>
+  <title>View data</title>
+</head>
+<body>
+<h1>View data</h1>
+<a href="../LB_7/add.php">Add new data</a>
+<table>
+  <thead>
+  <tr>
+    <th>ID</th>
+    <th>Operation</th>
+    <th>Input data</th>
+    <th>Result</th>
+    <th>Actions</th>
+  </tr>
+  </thead>
+  <tbody id="table-data">
+
+  </tbody>
+</table>
+</body>
+<script>
+  fetch('http://127.0.0.1:8000/LB_8/api.php')
+          .then((response) => response.json())
+          .then((data) => {
+            let tableData=``;
+            data.forEach(element=>{
+              tableData+=`<tr>
+                        <td>`+element['id']+`</td>
+                        <td>`+element['operation_name']+`</td>
+                        <td>`+element['input_data']+`</td>
+                        <td>`+element['output_data']+`</td>
+                        <td><a href='process.php?delete_id=`+element['id']+`'>Delete</a></td>
+                    </tr>`;
+            });
+            let tableBody=document.getElementById('table-data');
+            tableBody.innerHTML=tableData;
+          });
+</script>
+</html>
