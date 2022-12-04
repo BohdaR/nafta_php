@@ -16,7 +16,7 @@ if (isset($_POST['operation_id'])) {
         case 3:
             $new_operation = new Multiplication($data_array);
     }
-    $query = "INSERT INTO data VALUES (DEFAULT," . $_POST['operation_id'] . ",'" . $_POST['input_data'] . "','" . $new_operation->get_result() . "')";
+    $query = "INSERT INTO data (operation_id, input_data, output_data) VALUES (" . $_POST['operation_id'] . ",'" . $_POST['input_data'] . "','" . $new_operation->get_result() . "')";
     $result = pg_query($CONNECTION, $query) or die('Query failed: ' . pg_last_error());
 
 }
