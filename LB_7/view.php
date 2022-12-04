@@ -30,6 +30,10 @@ while ($row = pg_fetch_assoc($result)) {
 if(isset($_SESSION['user'])){
     echo "Success! Logged in as ".$_SESSION['user']['login'];
     echo " <a href='../LB_9/logout.php'>Logout</a>";
+
+}
+else {
+    header('Location: ../LB_9/login.php');
 }
 ?>
 <h1>View data</h1>
