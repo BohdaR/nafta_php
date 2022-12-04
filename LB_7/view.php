@@ -1,5 +1,6 @@
 <?php
 require_once('db.php');
+session_start();
 $query = "SELECT data.*, operations.name operation_name FROM data INNER JOIN operations ON operations.id=data.operation_id;";
 $result = pg_query($CONNECTION, $query) or die('Query failed: ' . pg_last_error());
 $table_data = "";
@@ -25,6 +26,12 @@ while ($row = pg_fetch_assoc($result)) {
     <title>Home</title>
 </head>
 <body>
+<?php
+if(isset($_SESSION['user'])){
+    echo "Success! Logged in as ".$_SESSION['user']['login'];
+    echo " <a href='../LB_9/logout.php'>Logout</a>";
+}
+?>
 <h1>View data</h1>
 <a href="add.php">Add new data</a>
 <table>
